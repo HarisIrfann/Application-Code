@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: node-js-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: node-js
@@ -15,10 +15,6 @@ spec:
       containers:
       - name: node-js
         image: premthat/aks-cluster-repo:backend
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
         ports:
         - containerPort: 4000
 
